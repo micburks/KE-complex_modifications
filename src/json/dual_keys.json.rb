@@ -16,18 +16,10 @@ def main
     "maintainers" => ["marlonrichert"],
     "rules" => [
       {
-        "description" => "Dual keys",
+        "description" => "Dual keys (micburks modified)",
         "manipulators" => [
-          generate_dual_key_rule("left_command", "tab", "left_shift"),
-          generate_dual_key_rule("right_command", "hyphen", "right_shift"),
-          generate_dual_key_rule("left_option", "return_or_enter", "left_command"),
-          generate_dual_key_rule("right_option", "equal_sign", "right_command"),
-          generate_dual_key_rule("grave_accent_and_tilde", "grave_accent_and_tilde", "left_control"),
-          generate_dual_key_rule("slash", "slash", "right_control"),
-          generate_dual_key_rule("caps_lock", "backslash", "left_option"),
-          generate_dual_key_rule("quote", "quote", "right_option"),
-          generate_single_key_rule("left_control", "open_bracket"),
-          generate_single_key_rule("left_arrow", "close_bracket"),
+          generate_dual_key_rule("caps_lock", "escape", "left_control"),
+          generate_dual_key_rule("return_or_enter", "return_or_enter", "left_control"),
         ],
       },
     ],
@@ -52,8 +44,8 @@ def generate_dual_key_rule(input, alone, held_down)
       },
     ],
     'parameters' => {
-      'basic.to_if_alone_timeout_milliseconds' => PARAMETERS[:to_if_alone_timeout_milliseconds],
-      'basic.to_if_held_down_threshold_milliseconds' => PARAMETERS[:to_if_held_down_threshold_milliseconds],
+      'basic.to_if_alone_timeout_milliseconds' => 500, # PARAMETERS[:to_if_alone_timeout_milliseconds],
+      'basic.to_if_held_down_threshold_milliseconds' => 0, # PARAMETERS[:to_if_held_down_threshold_milliseconds],
     },
   }
 end
