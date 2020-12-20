@@ -19,7 +19,8 @@ def main
         "description" => "Dual keys (micburks modified)",
         "manipulators" => [
           generate_dual_key_rule("caps_lock", "escape", "left_control"),
-          generate_dual_key_rule("return_or_enter", "return_or_enter", "left_control"),
+          generate_dual_key_rule("return_or_enter", "return_or_enter", "right_control"),
+          generate_dual_key_rule("backslash", "backslash", "right_command"),
         ],
       },
     ],
